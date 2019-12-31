@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/font-avesome.css">
+
+    <!-- normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <!-- link bootstrap 4 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- link nanogallery2 for galery section -->
+    <link type="text/css" rel="stylesheet" href="css/nanogallery2.min.css"/> 
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container d-flex justify-content-between">
+         
+            <div class="logo">
+                <img src="img/cropped-small_logo.png" alt="logotype">
+            </div>
+
+            <input id="hamburger" class="hamburger" type="checkbox"/>
+            <label class="hamburger" for="hamburger">
+                <i></i>
+                <text>
+                <close>close</close>
+                <open>menu</open>
+                </text>
+            </label>
+            <section class="drawer-list" id="menu">
+                
+                    <ul>
+                        <li><a href="#hero-slider">Главная</a></li>
+                        <li><a href="#price">Цены</a></li>
+                        <li><a href="#benefits">Преимущества</a></li>
+                        <li><a href="#galary">Галерея</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#contacts">Контакты</a></li>                    
+                    </ul>
+               
+            </section>
+           
+              
+        </div>
+    </header>
+    <section id="hero-slider">
+        <div class="hero-content">
+            <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img class="img-fluid" src="img/Artboard12.png" alt="slide_item">
+                    </div>
+                    <div class="item">
+                        <img class="img-fluid" src="img/Archi.png" alt="slide_item">
+                    </div>
+                    <div class="item">
+                        <img class="img-fluid" src="img/Laser12.png" alt="slide_item">
+                    </div>
+                    <div class="item">
+                        <img class="img-fluid" src="img/sportmaster-1.png" alt="slide_item">
+                    </div>  
+            </div>
+            <div class="text-center text_content">
+                <h1>Пейнтбольный клуб «Warriors» Черновцы</h1>
+            </div>
+            
+        </div>
+        
+    </section>
+    <section id="media">
+        <div class="container">
+            <div class="media_content">
+                <h1 class="media_content__title text-center my-5">Видео</h1>
+                
+                <div class="media_content__video">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <iframe class="card-img-top" height="300" src="https://www.youtube.com/embed/59_ntGB8udA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="card-body">
+                                    <h4 class="card-title">тренування по пейнтболу</h4>
+                                    <p class="card-text">
+                                        Це саме той спорт  який підійде кожному тут  поєднується як і індивідуальна техніка так і командна тактика. Якщо простіше ми навчимо Вас ефективно стріляти та рухатись, діяти в команді та самостійно досягати  переможного результата. 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <iframe class="card-img-top" height="300" src="https://www.youtube.com/embed/8VrArrMJKmA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="card-body">
+                                    <h4 class="card-title">Пейнтбольний корпоратив "Нова Пошта"</h4>
+                                    <p class="card-text mb-4">
+                                        Чудовий подарунок на День козатства від "Нова пошта" Пейнтбол 100+ чол. 
+                                        Замовляйте найкращий корпоратив і ВИ клуб "WARRIORS" -
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="price">
+        <div class="container">
+            <div class="price">
+                <div class="price__title">
+                    <h1>Цены</h1>
+                </div>
+                <div class="price__content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="price__content-block  d-flex align-items-center justify-content-center h-100 ">
+                                <div class="row">
+                                    <div class="col-md-4 my-auto">
+                                        <i class="fa fa-gamepad fa-5x"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                      
+                                        <h4>От 100 грн. - по будням</h4>
+                                        <h4>От 150 грн. - по выходным</h4>
+                                        <em> Безлимит с 1 человека за 1 час 300 грн.</em>
+                                        <p>(прокат снаряжения входит в цену)</p>
+                                        <p>(шарики за дополнительную цену)</p>
+                                    
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="price__content-block d-flex align-items-center justify-content-center h-100">
+                                <div class="row">
+                                    <div class="col-md-4 my-auto">
+                                        <i class="fa  fa-bullhorn fa-5x text-center"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                            <h4>Спецпредложение!</h4>
+                                            <h4>ПН - ЧТ с 8:00 - 14:00</h4>
+                                            <p>(для детей и студентов)</p>
+                                            <p>(условия уточняйте у администратора)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 my-5">
+                            <div class="price__content-block d-flex align-items-center justify-content-center h-100">
+                                <div class="row">
+                                    <div class="col-md-4 my-auto">
+                                        <i class="fa  fa-spinner fa-5x text-center"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="wrap">
+                                            <h4>Тренировки по пейнтболу <br> от 600грн. в месяц!</h4>
+                                            <p>(2 раза в неделю)</p>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="col-md-6 my-5">
+                            <div class="price__content-block d-flex align-items-center justify-content-center h-100 ">
+                                <div class="row">
+                                    <div class="col-md-4 my-auto">
+                                        <i class="fa fa-toggle-on fa-5x text-center"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h4>Мы работаем круглосуточно!</h4>
+                                        <p>(по предварительному заказу)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="price__content-block d-flex align-items-center justify-content-center h-100">
+                                <div class="row">
+                                    <div class="col-md-4 my-auto">
+                                        <i class="fa fa-bullseye fa-5x text-center"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h4>Ночной пейнтбол</h4>
+                                        <p>(от 5 000 грн. до 20 человек, 2 часа безлимит)</p>                                      
+                                    </div>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="price__content-block d-flex align-items-center justify-content-center h-100">
+                                <div class="row">
+                                    <div class="col-md-4 my-auto">
+                                        <i class="far fa-clock fa-5x text-center"></i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h4>Время ночного пейнтбола</h4>
+                                        <p>(играть можно с 20:00 - 8:00)</p>
+                                    </div>
+                                </div>
+                               
+                                
+                            </div>
+                        </div>
+                       
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="benefits">
+        <div class="container">
+            <div class="benefits">
+                <h1 class="text-center mb-5">Преимущества</h1>
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <i class="fas fa-shield-alt fa-8x mb-5"></i>
+                        <h4>Безопасность</h4>
+                        <p>Безопасность важнее всего! <br> За процессом следит опытный инструктор.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <i class="fa  fa-birthday-cake fa-8x mb-5"></i>
+                        <h4>Организация праздников</h4>
+                        <p>Приглашаем Вас на празднование дней рождений и корпоративов.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <i class="far fa-check-circle fa-8x mb-5"></i>
+                        <h4>Безлимитная игра</h4>
+                        <p>Только у нас – пейнтбол с безлимитным количеством шаров!</p>
+                    </div>
+                    <div class="col-md-3 col-sm-12 text-center">
+                        <i class="fa fa-users fa-8x mb-5"></i>
+                        <h4>Доступность</h4>
+                        <p>В пейнтбол могут играть все, от брутальных военных до школьников.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="galary">
+        <div class="container">
+            <div class="galary" >
+                <div ID="ngy2p" data-nanogallery2='{
+                    "thumbnailLabel": {
+                      "display": false
+                    },
+                    "thumbnailHeight": 200, "thumbnailWidth": 300,
+                    "thumbnailAlignment": "center",
+                    "thumbnailL1GutterWidth": 25,
+                    "thumbnailGutterHeight": 40,
+                    "thumbnailStacks": 4,
+                    "thumbnailStacksTranslateZ": 0.3,
+                    "thumbnailStacksRotateX": 0.9,
+                    "galleryBuildInit2": "perspective_990px|perspective_origin_50% 150%",
+                    "thumbnailHoverEffect2": "thumbnail_translateZ_0px_100px_easeOutQuad_400 | thumbnail_rotateX_0deg_10deg_easeOutBack_200 | thumbnail_rotateX_10deg_0deg_delay250_keyframe_hoverin_easeOutBack_400"
+                  }'>
+                  <a href="img/galary11.jpg" data-ngthumb="img/galary1.jpg" data-ngdesc=""></a>
+                  <a href="img/galary22.jpg" data-ngthumb="img/galary2.jpg" data-ngdesc=""></a>
+                  <a href="img/galary33.jpg" data-ngthumb="img/galary3.jpg" data-ngdesc=""></a>
+                  <a href="img/galary44.jpg" data-ngthumb="img/galary4.jpg" data-ngdesc=""></a>
+                  <a href="img/galary55.jpg" data-ngthumb="img/galary5.jpg" data-ngdesc=""></a>
+                  <a href="img/galary66.jpg" data-ngthumb="img/galary6.jpg" data-ngdesc=""></a>
+                  <a href="img/galary77.jpg" data-ngthumb="img/galary7.jpg" data-ngdesc=""></a>
+                  <a href="img/galary88.jpg" data-ngthumb="img/galary8.jpg" data-ngdesc=""></a>
+                  <a href="img/galary44.jpg" data-ngthumb="img/galary4.jpg" data-ngdesc=""></a>
+            
+                </div>
+                <!-- <h1 class="text-center">Галерея</h1>
+                <div class="row" id="lightgallery">
+                    <div class="col-md-3 col-sm-12 photo-item">
+                        <div class="img-box" >
+                            <a href="img/galary11.jpg" data-lightbox="mygallary"><img class="img-fluid" src="img/galary1.jpg" alt="galary"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 photo-item">
+                        <div class="img-box">
+                            <a href="img/galary22.jpg" data-lightbox="mygallary"><img class="img-fluid" src="img/galary2.jpg" alt="galary"></a>
+                        </div>                       
+                    </div>
+                    <div class="col-md-3 col-sm-12 photo-item">
+                        <div class="img-box">
+                            <a href="img/galary33.jpg" data-lightbox="mygallary"><img class="img-fluid" src="img/galary3.jpg" alt="galary"></a>
+                        </div>                       
+                    </div>
+                    <div class="col-md-3 col-sm-12 photo-item">
+                        <div class="img-box">
+                            <a href="img/galary44.jpg" data-lightbox="mygallary"><img class="img-fluid" src="img/galary4.jpg" alt="galary"></a>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-3 col-sm-12 photo-item">
+                        <div class="img-box">
+                            <a href="img/galary55.jpg" data-lightbox="mygallary"><img class="img-fluid" src="img/galary5.jpg" alt="galary"></a>
+                        </div>                        
+                    </div>
+                    <div class="col-md-3 col-sm-12 photo-item">
+                        <div class="img-box">
+                            <a href="img/galary66.jpg" data-lightbox="mygallary"><img class="img-fluid" src="img/galary6.jpg" alt="galary"></a>
+                        </div>                        
+                    </div>
+                    <div class="col-md-3 col-sm-12 photo-item">
+                        <div class="img-box">
+                            <a href="img/galary77.jpg" data-lightbox="mygallary"><img class="img-fluid" src="img/galary7.jpg" alt="galary"></a>
+                        </div>                       
+                    </div>
+                    <div class="col-md-3 col-sm-12 photo-item">
+                        <div class="img-box">
+                            <a href="img/galary88.jpg" data-lightbox="mygallary"><img class="img-fluid" src="img/galary8.jpg" alt="galary"></a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <section id="reviews">
+        <div class="container">
+            <div class="reviews">
+                <h1>Отзывы наших клиентов</h1>
+                <div class="reviews__content">
+                    <div class="row">
+                        <div class="col-md-4 mt-3">
+                            <blockquote>
+                                <h4>Cветлана</h4>
+                                <em>
+                                    Отличное место! Все очень понравилось. Дети от восторга заснуть не могли! Всегда Вас буду рекомендовать своим друзьям! А еще отдельная благодарность инструктору, который проводил инструктаж и бои детям! Очень внимательный, вежливый и ответственный! Спасибо.
+                                </em>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            <blockquote>
+                                <h4>Кирил</h4>
+                                <em>
+                                    Лучшее место для игры в пейнтбол. И не только для новичков которые хотят поднять свой уровень, но и для профессиональных спортсменов!
+                                </em>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-4 mt-3">
+                            <blockquote>
+                                <h4>Роман</h4>
+                                <em>                                    
+                                    Вчера играли с друзьями в пейнтбольном клубе, очень весело и позитивно провели время. Нам провели турнир, что подняло соревновательный дух и желание победить. И конечно же большое спасибо менеджеру что быстро сориентировались и правильно поняли друг друга)))
+                                </em>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacts">
+        <div class="container">
+            <div class="contacts">
+                <div class="contacts__title">
+                    <h1>Контакты</h1>
+                </div> 
+                <div class="contacts__content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="name">Имя</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Ваше Имя">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Телефон</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Ваш телефон">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Сообщение</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+                                </div>
+                                <input class="form-control btn btn-success" type="submit" value="Отправить">
+                            </form>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <p>Приглашаем Вас на празднование дней рождений, корпоративов. У нас всегда можно
+                                активно отдохнуть и получить незабываемые эмоции!</p>
+                            <h4>Мы всегда на связи:</h4>
+                            <div class="contacts__info mt-3 d-flex">
+                                <i class="fas fa-map-marker-alt fa-3x my-auto mr-5"></i>
+                                <p>г. Черновцы <br>ул. Хотинская, 43 <br>ТРЦ Панорама (2 этаж у скалодрома) <br></p>
+                            </div>
+                            <div class="contacts__info mt-3 d-flex">
+                                <i class="fas fa-phone-square-alt fa-3x my-auto mr-5"></i>
+                                <p class="my-auto">+380 (99) 277 07 71<br>+380 (67) 173 77 33</p>
+                            </div>
+                            <div class="contacts__info mt-3 d-flex">
+                                <i class="fas fa-paper-plane fa-3x my-auto mr-5"></i>
+                                <a class="my-auto" href="mailto:cspxpree@gmail.com">reabko15@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <div class="about">
+                <div class="about__title">
+                    <h1>Пейнтбольный клуб в Черновцах Warriors</h1>
+                </div>
+                <div class="about__content">
+                    <blockquote>
+                        <p>
+                            Наш пейнтбольный клуб в Черновцах Warriors подарит вам незабываемые впечатления, отличное настроение и позитивный заряд на долгое время!
+                            Пейнтбол на день рождения или лазертаг на день рождения - это наилучший подарок близкому человеку. Этот день не только скрасит ваши будни, но и наполнит жизнь новым смыслом, внеся в нее много азарта и чуточку спортивной нагрузки. Лазертаг на день рождение - это отличная альтернатива пейнтболу, если вы боитесь испачкаться в краску.
+                            Детский день рождения на пейнтболе в клубе Warriors - это фейерверк эмоций для вашего ребенка и его друзей.
+                            Если вы устали от офисных будней и мечтаете размяться на свежем воздухе в компании сотрудников и друзей, корпоратив на пейнтболе - это именно то, что вам нужно! Игра в пейнтбол или лазертаг на природе сплотит любую команду офисных работников!
+                            Только в нашем клубе вы сможете поиграть в пейнтбол, лазертаг, покататься на квадроциклах, или же просто пострелять в тире! Мы найдем подходящее занятие для каждого клиента!
+                            Пейнтбольный клуб Warriors приглашает всех предпринимателей Черновцов и области заказать игру в пейнтбол или лазертаг по случаю празднования юбилея компании, успешной сделки или дня рождения! Свежий воздух, шашлыки, пиво после игры и никаких разговоров о работе, - вы будете иметь возможность получше узнать друг друга!
+                            <ul>
+                                <li>Организация корпоративов на пейнтболе для больших компаний в Черновцах и за городом (50 чел. и больше)!</li>
+                                <li>Организация игр в лазертаг, катание на квадроциклах, стрельба в тире!</li>
+                                <li>Наличие беседок и мангала для шашлыка!</li>
+                                <li>Кейтеринг (возможность заказать еду у нас)!</li>
+                                <li>Профессиональный фото видеоотчет!</li>
+                                <li>Специальная скидка для корпоративных клиентов!</li>
+                            </ul>
+                            
+                            <em>Корпоратив на пейнтболе или лазертаге - отличное решение как для мужского, так и для женского коллектива! Милые женщины, если вы боитесь синяков или испачкаться в краску, играя в пейнтбол, попробуйте игру в лазертаг, и вы об этом не пожалеете!
+                            Корпоратив на пейнтболе в клубе Warriors - это активный отдых для больших и маленьких компаний и предпринимателей!</em>
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <div class="footer">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-md-4">
+                        <div class="order_call">
+                            <h3 class="text-center mb-4">Обратный звонок</h3>
+                            <form action="" method="post">
+                                <div class="form-inline">
+                                    <input class="form-control mr-2" type="text" name="phone" id="phone" placeholder="Ваш Телефон">
+                                    <input type="submit" class=" form-control btn-success">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="text-center mb-4">Мы в соцсетях</h3>
+                        <div class="text-center">
+                            <a href="#"><i class="fab fa-facebook-f fa-2x mr-4"></i></a>
+                            <a href="#"><i class="fab fa-instagram fa-2x mr-4"></i></a>
+                            <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h3 class=" mb-4">Дизайн / Разработка</h3>
+                        <a href="https://vk.com/id144880726">https://vk.com/id144880726</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    
+    
+    
+    <!-- for bootsrap -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+
+    <!-- siema slider -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- lightgalary -->
+    <script src="js/jquery.nanogallery2.min.js"></script>
+
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="js/wow.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.ui.min.js'></script>
+</body>
+</html>

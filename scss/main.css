@@ -1,0 +1,21 @@
+.header {
+  padding: 25px 0;
+  background-color: #222;
+}
+
+.header a {
+  color: red;
+  text-transform: uppercase;
+  font-size: 13px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.header a:hover {
+  color: #5fd60a;
+}
+
+.header a:active {
+  color: #3e850b;
+}
+/*# sourceMappingURL=main.css.map */
