@@ -33,27 +33,23 @@
                 <img src="img/cropped-small_logo.png" alt="logotype">
             </div>
 
-            <input id="hamburger" class="hamburger" type="checkbox"/>
-            <label class="hamburger" for="hamburger">
-                <i></i>
-                <text>
-                <close>close</close>
-                <open>menu</open>
-                </text>
-            </label>
-            <section class="drawer-list" id="menu">
-                
-                    <ul>
-                        <li><a href="#hero-slider">Главная</a></li>
-                        <li><a href="#price">Цены</a></li>
-                        <li><a href="#benefits">Преимущества</a></li>
-                        <li><a href="#galary">Галерея</a></li>
-                        <li><a href="#reviews">Отзывы</a></li>
-                        <li><a href="#contacts">Контакты</a></li>                    
-                    </ul>
-               
-            </section>
+            
            
+                <div class="overlay">
+                    <nav class="overlayMenu" id="menu">  
+                        <ul role="menu" >
+                            <li><a class="menu__item" href="#hero-slider" role="menuitem">Главная</a></li>
+                            <li><a class="menu__item" href="#price" role="menuitem">Цены</a></li>
+                            <li><a class="menu__item" href="#benefits" role="menuitem">Преимущества</a></li>
+                            <li><a class="menu__item" href="#galary" role="menuitem">Галерея</a></li>
+                            <li><a class="menu__item" href="#reviews" role="menuitem">Отзывы</a></li>
+                            <li><a class="menu__item" href="#contacts" role="menuitem">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="navBurger mt-2" role="navigation" id="navToggle"></div>
+              
               
         </div>
     </header>
@@ -87,8 +83,8 @@
                 
                 <div class="media_content__video">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="card">
+                        <div class="col-md-6 mt-4">
+                            <div class="card h-100 ">
                                 <iframe class="card-img-top" height="300" src="https://www.youtube.com/embed/59_ntGB8udA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="card-body">
                                     <h4 class="card-title">тренування по пейнтболу</h4>
@@ -98,12 +94,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="card">
+                        <div class="col-md-6 mt-4">
+                            <div class="card h-100">
                                 <iframe class="card-img-top" height="300" src="https://www.youtube.com/embed/8VrArrMJKmA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="card-body">
                                     <h4 class="card-title">Пейнтбольний корпоратив "Нова Пошта"</h4>
-                                    <p class="card-text mb-4">
+                                    <p class="card-text">
                                         Чудовий подарунок на День козатства від "Нова пошта" Пейнтбол 100+ чол. 
                                         Замовляйте найкращий корпоратив і ВИ клуб "WARRIORS" -
                                     </p>
@@ -123,17 +119,16 @@
                 </div>
                 <div class="price__content">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="offset-md-2 col-md-8 offset-md-2 mb-5">
                             <div class="price__content-block  d-flex align-items-center justify-content-center h-100 ">
                                 <div class="row">
-                                    <div class="col-md-4 my-auto">
+                                    <div class="col-md-4 my-auto mx-auto">
                                         <i class="fa fa-gamepad fa-5x"></i>
                                     </div>
                                     <div class="col-md-8">
                                       
                                         <h4>От 100 грн. - по будням</h4>
                                         <h4>От 150 грн. - по выходным</h4>
-                                        <em> Безлимит с 1 человека за 1 час 300 грн.</em>
                                         <p>(прокат снаряжения входит в цену)</p>
                                         <p>(шарики за дополнительную цену)</p>
                                     
@@ -143,7 +138,7 @@
                                 
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="offset-md-2 col-md-8 offset-md-2 mb-5">
                             <div class="price__content-block d-flex align-items-center justify-content-center h-100">
                                 <div class="row">
                                     <div class="col-md-4 my-auto">
@@ -159,7 +154,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 my-5">
+                        <div class="offset-md-2 col-md-8 offset-md-2 mb-5">
                             <div class="price__content-block d-flex align-items-center justify-content-center h-100">
                                 <div class="row">
                                     <div class="col-md-4 my-auto">
@@ -174,7 +169,7 @@
                                 </div>                                
                             </div>
                         </div>
-                        <div class="col-md-6 my-5">
+                        <div class="offset-md-2 col-md-8 offset-md-2 mb-5">
                             <div class="price__content-block d-flex align-items-center justify-content-center h-100 ">
                                 <div class="row">
                                     <div class="col-md-4 my-auto">
@@ -188,7 +183,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="offset-md-2 col-md-8 offset-md-2 mb-5">
                             <div class="price__content-block d-flex align-items-center justify-content-center h-100">
                                 <div class="row">
                                     <div class="col-md-4 my-auto">
@@ -203,7 +198,7 @@
                                
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="offset-md-2 col-md-8 offset-md-2">
                             <div class="price__content-block d-flex align-items-center justify-content-center h-100">
                                 <div class="row">
                                     <div class="col-md-4 my-auto">
@@ -257,12 +252,12 @@
     </section>
     <section id="galary">
         <div class="container">
-            <div class="galary" >
+            <div class="galary mx-auto" >
                 <div ID="ngy2p" data-nanogallery2='{
                     "thumbnailLabel": {
                       "display": false
                     },
-                    "thumbnailHeight": 200, "thumbnailWidth": 300,
+                    "thumbnailHeight": 150, "thumbnailWidth": 200,
                     "thumbnailAlignment": "center",
                     "thumbnailL1GutterWidth": 25,
                     "thumbnailGutterHeight": 40,
@@ -455,7 +450,7 @@
                             <form action="" method="post">
                                 <div class="form-inline">
                                     <input class="form-control mr-2" type="text" name="phone" id="phone" placeholder="Ваш Телефон">
-                                    <input type="submit" class=" form-control btn-success">
+                                    <input type="submit" class="form-control btn-success">
                                 </div>
                             </form>
                         </div>
@@ -484,6 +479,7 @@
     <!-- for bootsrap -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- siema slider -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">

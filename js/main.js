@@ -1,4 +1,17 @@
 $(document).ready(function(){
+
+    $("#navToggle").click(function() {
+        $("#navToggle").toggleClass("active");
+        $(".overlay").toggleClass("open");
+        $("body").toggleClass("locked"); 
+        
+    });
+    $(".menu__item").on("click", function(){
+        $("#navToggle").toggleClass("active");
+        $(".overlay").toggleClass("open");
+        $("body").toggleClass("locked"); 
+    });
+
     $('.owl-carousel').owlCarousel({
         loop: true,
         dots: false,

@@ -1,8 +1,132 @@
 .container {
   max-width: 70%; }
 
-.header {
+.navBurger {
+  margin-left: auto;
+  cursor: pointer;
+  background: #fff;
+  box-sizing: border-box;
+  background-clip: content-box;
+  width: 30px;
+  height: 24px;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  z-index: 100; }
+  .navBurger:before, .navBurger:after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    height: 2px;
+    width: 100%;
+    right: 0;
+    will-change: rotate;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+  .navBurger:before {
+    top: -10px; }
+  .navBurger:after {
+    bottom: -10px;
+    width: 90%; }
+  .navBurger.active {
+    background: transparent;
+    background-clip: content-box; }
+  .navBurger.active:before {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    top: 0;
+    background: #eee;
+    width: 110%; }
+  .navBurger.active:after {
+    bottom: 0;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    background: #eee;
+    width: 110%; }
+
+.overlay {
   position: fixed;
+  background: #2a3140;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform-origin: right top;
+  transform: scale(0);
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  z-index: 100; }
+  .overlay.open {
+    opacity: 0.99;
+    visibility: visible;
+    transform: scale(1); }
+    .overlay.open li {
+      display: block;
+      animation: fadeInRight 0.4s cubic-bezier(0.42, 0.83, 0.7, 1.5) forwards;
+      animation-delay: 0.4s;
+      transform: rotate(-7deg);
+      transform-origin: right bottom; }
+      .overlay.open li:nth-of-type(2) {
+        animation-delay: 0.5s; }
+      .overlay.open li:nth-of-type(3) {
+        animation-delay: 0.6s; }
+      .overlay.open li:nth-of-type(4) {
+        animation-delay: 0.7s; }
+      .overlay.open li:nth-of-type(5) {
+        animation-delay: 0.8s; }
+
+.overlayMenu {
+  position: absolute;
+  text-align: right;
+  right: 10vw;
+  bottom: 10vw; }
+  .overlayMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    height: 100%; }
+    .overlayMenu ul li {
+      display: block;
+      position: relative;
+      opacity: 0;
+      width: 100%; }
+      .overlayMenu ul li a {
+        display: inline-block;
+        border: 2px solid rgba(255, 255, 255, 0.09);
+        color: #fff;
+        text-decoration: none;
+        font-size: 30px;
+        padding: 10px 40px 10px 40px;
+        margin: 5px 0;
+        transition: 0.2s; }
+        .overlayMenu ul li a:hover, .overlayMenu ul li a:active, .overlayMenu ul li a:focus {
+          transform: translateX(-2px);
+          padding-left: 80px;
+          outline: 1px solid rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.03); }
+
+.locked {
+  overflow: hidden; }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 50px; }
+  100% {
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg); } }
+.header {
+  position: sticky;
   width: 100%;
   top: 0;
   z-index: 2;
@@ -103,7 +227,7 @@ section#benefits {
   padding: 50px 0; }
   .reviews h1 {
     text-align: center;
-    font-style: 42px;
+    font-size: 42px;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 70px; }
@@ -123,7 +247,7 @@ section#contacts {
 
 .contacts__title {
   text-align: center;
-  font-style: 42px;
+  font-size: 42px;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 70px; }
@@ -161,364 +285,269 @@ footer#footer {
   border: none;
   color: #fff; }
 
-html {
-  font-family: 'Lato', sans-serif; }
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-  height: 100vh;
-  width: 100vw; }
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-
-.msg {
-  font-family: 'Pacifico', cursive;
-  font-size: 8vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  max-height: 100%;
-  max-width: 100%;
-  align-items: center;
-  color: #FEFEFE;
-  background-color: #1184F0; }
-
-.features {
-  font-family: 'Lato', sans-serif;
-  font-size: 1rem;
-  text-transform: uppercase; }
-
-.features li {
-  width: 100%;
-  text-align: center;
-  padding: .25em; }
-
-.drawer-list {
-  position: fixed;
-  right: 0;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  transform: translate(100vw, 0);
-  /* ie workaround */
-  -ms-transform: translatex(-100vw);
-  box-sizing: border-box;
-  pointer-events: none;
-  padding-top: 125px;
-  transition: width 475ms ease-out, transform 450ms ease, border-radius .8s .1s ease;
-  border-bottom-left-radius: 100vw;
-  background-color: #3d88ce;
-  background-color: rgba(12, 106, 194, 0.8); }
-
-@media (min-width: 768px) {
-  .drawer-list {
-    width: 40vw; } }
-.drawer-list ul {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: auto;
-  overflow-x: hidden;
-  pointer-events: auto; }
-
-.drawer-list li {
-  list-style: none;
-  text-transform: uppercase;
-  pointer-events: auto;
-  white-space: nowrap;
-  box-sizing: border-box;
-  transform: translatex(100vw);
-  /* ie workaround */
-  -ms-transform: translatex(-100vw); }
-
-.drawer-list li:last-child {
-  margin-bottom: 2em; }
-
-.drawer-list li a {
-  text-decoration: none;
-  color: #FEFEFE;
-  text-align: center;
-  display: block;
-  padding: 1rem;
-  font-size: calc(24px - .5vw); }
-
-@media (min-width: 768px) {
-  .drawer-list li a {
-    text-align: right;
-    padding: .5rem; } }
-.drawer-list li a:hover {
-  cursor: pointer;
-  background-color: #88c2f8;
-  background-color: rgba(17, 132, 240, 0.5); }
-
-input.hamburger {
-  display: none; }
-
-input.hamburger:checked ~ .drawer-list {
-  transform: translatex(0);
-  border-bottom-left-radius: 0; }
-
-input.hamburger:checked ~ .drawer-list li {
-  transform: translatex(0); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(1) {
-  transition: transform 1s 0.08s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(2) {
-  transition: transform 1s 0.16s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(3) {
-  transition: transform 1s 0.24s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(4) {
-  transition: transform 1s 0.32s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(5) {
-  transition: transform 1s 0.4s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(6) {
-  transition: transform 1s 0.48s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(7) {
-  transition: transform 1s 0.56s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(8) {
-  transition: transform 1s 0.64s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(9) {
-  transition: transform 1s 0.72s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(10) {
-  transition: transform 1s 0.8s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(11) {
-  transition: transform 1s 0.88s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(12) {
-  transition: transform 1s 0.96s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(13) {
-  transition: transform 1s 1.04s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(14) {
-  transition: transform 1s 1.12s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(15) {
-  transition: transform 1s 1.2s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(16) {
-  transition: transform 1s 1.28s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(17) {
-  transition: transform 1s 1.36s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(18) {
-  transition: transform 1s 1.44s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(19) {
-  transition: transform 1s 1.52s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(20) {
-  transition: transform 1s 1.6s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(21) {
-  transition: transform 1s 1.68s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(22) {
-  transition: transform 1s 1.76s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(23) {
-  transition: transform 1s 1.84s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(24) {
-  transition: transform 1s 1.92s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(25) {
-  transition: transform 1s 2s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(26) {
-  transition: transform 1s 2.08s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(27) {
-  transition: transform 1s 2.16s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(28) {
-  transition: transform 1s 2.24s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(29) {
-  transition: transform 1s 2.32s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(30) {
-  transition: transform 1s 2.4s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(31) {
-  transition: transform 1s 2.48s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(32) {
-  transition: transform 1s 2.56s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(33) {
-  transition: transform 1s 2.64s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(34) {
-  transition: transform 1s 2.72s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(35) {
-  transition: transform 1s 2.8s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(36) {
-  transition: transform 1s 2.88s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(37) {
-  transition: transform 1s 2.96s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(38) {
-  transition: transform 1s 3.04s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(39) {
-  transition: transform 1s 3.12s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(40) {
-  transition: transform 1s 3.2s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(41) {
-  transition: transform 1s 3.28s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(42) {
-  transition: transform 1s 3.36s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(43) {
-  transition: transform 1s 3.44s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(44) {
-  transition: transform 1s 3.52s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(45) {
-  transition: transform 1s 3.6s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(46) {
-  transition: transform 1s 3.68s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(47) {
-  transition: transform 1s 3.76s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(48) {
-  transition: transform 1s 3.84s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(49) {
-  transition: transform 1s 3.92s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li:nth-child(50) {
-  transition: transform 1s 4s cubic-bezier(0.29, 1.4, 0.44, 0.96); }
-
-input.hamburger:checked ~ .drawer-list li a {
-  padding-right: 15px; }
-
-input.hamburger:checked ~ label > i {
-  background-color: transparent;
-  transform: rotate(90deg); }
-
-input.hamburger:checked ~ label > i:before {
-  transform: translate(-50%, -50%) rotate(315deg); }
-
-input.hamburger:checked ~ label > i:after {
-  transform: translate(-50%, -50%) rotate(-315deg); }
-
-input.hamburger:checked ~ label close {
-  color: #FEFEFE;
-  width: 100%; }
-
-input.hamburger:checked ~ label open {
-  color: transparent;
-  width: 0; }
-
-label.hamburger {
-  z-index: 9999;
-  position: relative;
-  display: block;
-  height: 50px;
-  width: 50px; }
-
-label.hamburger:hover {
-  cursor: pointer; }
-
-label.hamburger text close,
-label.hamburger text open {
-  text-transform: uppercase;
-  font-size: .8em;
-  align-text: center;
-  position: absolute;
-  transform: translateY(50px);
-  text-align: center;
-  overflow: hidden;
-  transition: width .25s .35s, color .45s .35s; }
-
-label.hamburger text close {
-  color: transparent;
-  right: 0;
-  width: 0; }
-
-label.hamburger text open {
-  color: #FEFEFE;
-  width: 100%; }
-
-label.hamburger > i {
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  top: 50%;
-  background-color: #FEFEFE;
-  pointer-events: auto;
-  transition-duration: .35s;
-  transition-delay: .35s; }
-
-label.hamburger > i:before, label.hamburger > i:after {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 2px;
-  left: 50%;
-  background-color: #FEFEFE;
-  content: "";
-  transition: transform 0.35s;
-  transform-origin: 50% 50%; }
-
-label.hamburger > i:before {
-  transform: translate(-50%, -14px); }
-
-label.hamburger > i:after {
-  transform: translate(-50%, 14px); }
-
-label.hamburger {
-  position: fixed;
-  top: 15px;
-  right: 15px; }
-
-/**
-    SCROLLBAR STYLE FOR IE
-*/
-body {
-  scrollbar-base-color: #138a72;
-  scrollbar-3dlight-color: #fff;
-  scrollbar-highlight-color: #1abc9c;
-  scrollbar-track-color: #fff;
-  scrollbar-arrow-color: #1abc9c;
-  scrollbar-shadow-color: #1abc9c;
-  scrollbar-dark-shadow-color: #1abc9c;
-  -ms-overflow-style: -ms-autohiding-scrollbar; }
-
-.icon {
-  display: inline-block;
-  width: 5vw;
-  height: 4vw;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor; }
+@media (max-width: 1024px) {
+  .overlayMenu li a {
+    font-size: 16px !important; }
+
+  .media_content__title {
+    font-size: 26px; }
+  .media_content__video .card-body h4 {
+    font-size: 18px; }
+  .media_content__video .card-body p {
+    font-size: 14px; }
+
+  .price__title h1 {
+    font-size: 26px; }
+  .price__content .price__content-block i {
+    font-size: 50px; }
+  .price__content .price__content-block h4 {
+    font-size: 16px !important; }
+  .price__content .price__content-block em {
+    font-size: 14px; }
+  .price__content .price__content-block p {
+    font-size: 10px; }
+
+  .benefits h1 {
+    font-size: 26px; }
+  .benefits i {
+    font-size: 56px; }
+  .benefits h4 {
+    font-size: 18px; }
+  .benefits p {
+    font-size: 12px; }
+
+  .reviews h1 {
+    font-size: 26px; }
+  .reviews h4 {
+    font-size: 20px; }
+  .reviews em {
+    font-size: 14px; }
+
+  .contacts__title {
+    margin-bottom: 20px; }
+    .contacts__title h1 {
+      font-size: 26px; }
+  .contacts__content i {
+    font-size: 35px; }
+  .contacts__content p {
+    font-size: 14px; }
+
+  .about__title h1 {
+    font-size: 26px; }
+
+  .footer h3 {
+    font-size: 18px; }
+  .footer input[type="text"] {
+    width: 100%; }
+  .footer input[type="submit"] {
+    margin-top: 20px;
+    width: 96%; } }
+@media (max-width: 768px) {
+  .overlayMenu li a {
+    font-size: 16px !important; }
+
+  .media_content__title {
+    font-size: 26px; }
+  .media_content__video .card-body {
+    display: none; }
+
+  .price__title h1 {
+    font-size: 26px; }
+  .price__content .price__content-block i {
+    font-size: 50px; }
+  .price__content .price__content-block h4 {
+    font-size: 16px !important; }
+  .price__content .price__content-block em {
+    font-size: 14px; }
+  .price__content .price__content-block p {
+    font-size: 10px; }
+
+  .benefits h1 {
+    font-size: 26px; }
+  .benefits i {
+    font-size: 56px; }
+  .benefits h4 {
+    font-size: 16px; }
+  .benefits p {
+    font-size: 10px; }
+
+  .reviews h1 {
+    font-size: 26px; }
+  .reviews h4 {
+    font-size: 20px; }
+  .reviews em {
+    font-size: 14px; }
+
+  .contacts__title {
+    margin-bottom: 20px; }
+    .contacts__title h1 {
+      font-size: 26px; }
+  .contacts__content i {
+    font-size: 35px; }
+  .contacts__content p {
+    font-size: 14px; }
+
+  .about__title h1 {
+    font-size: 26px; }
+
+  .footer h3 {
+    font-size: 18px; }
+  .footer input[type="text"] {
+    width: 100%; }
+  .footer input[type="submit"] {
+    margin-top: 20px;
+    width: 96%; } }
+@media (max-width: 414px) {
+  .header .logo img {
+    margin-top: 10px;
+    width: 60%; }
+
+  .overlayMenu li a {
+    font-size: 16px !important; }
+
+  .hero-content .text_content h1 {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700; }
+
+  .media_content__title {
+    font-size: 24px; }
+  .media_content__video .card-body {
+    display: none; }
+
+  .price__title h1 {
+    font-size: 26px; }
+  .price__content .price__content-block {
+    text-align: center; }
+    .price__content .price__content-block i {
+      font-size: 50px;
+      margin-bottom: 10px; }
+    .price__content .price__content-block h4 {
+      font-size: 16px !important; }
+    .price__content .price__content-block em {
+      font-size: 14px; }
+    .price__content .price__content-block p {
+      font-size: 10px; }
+
+  .benefits h1 {
+    font-size: 26px; }
+  .benefits i {
+    font-size: 56px; }
+  .benefits h4 {
+    font-size: 16px; }
+  .benefits p {
+    font-size: 10px; }
+
+  .reviews h1 {
+    font-size: 26px; }
+  .reviews h4 {
+    font-size: 18px; }
+  .reviews em {
+    font-size: 13px; }
+
+  .contacts__title {
+    margin-bottom: 20px; }
+    .contacts__title h1 {
+      font-size: 26px; }
+  .contacts__content i {
+    font-size: 35px; }
+  .contacts__content p {
+    font-size: 14px; }
+
+  .about__title h1 {
+    font-size: 26px; }
+  .about__content p {
+    font-size: 13px; }
+  .about__content em {
+    font-size: 13px; }
+  .about__content li {
+    font-size: 13px; }
+
+  .footer h3 {
+    margin-top: 20px;
+    font-size: 18px; }
+  .footer input[type="text"] {
+    width: 100%; }
+  .footer input[type="submit"] {
+    margin-top: 20px;
+    width: 97%;
+    margin-bottom: 10px; } }
+@media (max-width: 320px) {
+  .header .logo img {
+    margin-top: 10px;
+    width: 60%; }
+
+  .overlayMenu li a {
+    font-size: 16px !important; }
+
+  .hero-content .text_content h1 {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700; }
+
+  .media_content__title {
+    font-size: 24px; }
+  .media_content__video .card-body {
+    display: none; }
+
+  .price__title h1 {
+    font-size: 26px; }
+  .price__content .price__content-block {
+    text-align: center; }
+    .price__content .price__content-block i {
+      font-size: 50px;
+      margin-bottom: 10px; }
+    .price__content .price__content-block h4 {
+      font-size: 16px !important; }
+    .price__content .price__content-block em {
+      font-size: 14px; }
+    .price__content .price__content-block p {
+      font-size: 10px; }
+
+  .benefits h1 {
+    font-size: 26px; }
+  .benefits i {
+    font-size: 56px; }
+  .benefits h4 {
+    font-size: 16px; }
+  .benefits p {
+    font-size: 10px; }
+
+  .reviews h1 {
+    font-size: 26px; }
+  .reviews h4 {
+    font-size: 18px; }
+  .reviews em {
+    font-size: 13px; }
+
+  .contacts__title {
+    margin-bottom: 20px; }
+    .contacts__title h1 {
+      font-size: 26px; }
+  .contacts__content i {
+    font-size: 35px; }
+  .contacts__content p {
+    font-size: 14px; }
+  .contacts__content a {
+    font-size: 12px; }
+
+  .about__title h1 {
+    font-size: 18px; }
+  .about__content p {
+    font-size: 11px; }
+  .about__content em {
+    font-size: 11px; }
+  .about__content li {
+    font-size: 11px; }
+
+  .footer h3 {
+    margin-top: 20px;
+    font-size: 18px; }
+  .footer input[type="text"] {
+    width: 100%; }
+  .footer input[type="submit"] {
+    margin-top: 20px;
+    width: 97%;
+    margin-bottom: 10px; } }
 
 /*# sourceMappingURL=style.css.map */
