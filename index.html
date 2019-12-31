@@ -8,7 +8,7 @@
 
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
-    
+
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/4639d6b899.js" crossorigin="anonymous"></script>
     
@@ -371,7 +371,7 @@
                 <div class="contacts__content">
                     <div class="row">
                         <div class="col-md-6 wow bounceInLeft">
-                            <form action="" method="post">
+                            <form action="send.php" method="post">
                                 <div class="form-group wow bounceInLeft" data-wow-delay="0.1s">
                                     <label for="name">Имя</label>
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Ваше Имя">
@@ -448,8 +448,9 @@
                     <div class="col-md-4">
                         <div class="order_call">
                             <h3 class="text-center mb-4">Обратный звонок</h3>
-                            <form action="" method="post">
+                            <form action="send.php" method="post">
                                 <div class="form-inline">
+                                    <input type="hidden" name="what" value="Обратный звонок">
                                     <input class="form-control mr-2" type="text" name="phone" id="phone" placeholder="Ваш Телефон">
                                     <input type="submit" class="form-control btn-success">
                                 </div>

@@ -1,6 +1,7 @@
 <?php
     $name = $_POST['name'];
     $phone = $_POST['phone'];
+    $msg = $_POST['message'];
     $what = $_POST['what'];
 
 
@@ -11,7 +12,8 @@
     Письмо отправленна из моей формы
     Пользователь хочет: ".htmlspecialchars($what)." 
     Имя: ".htmlspecialchars($name)." 
-    Телефон:".htmlspecialchars($phone);
+    Телефон:".htmlspecialchars($phone)."
+    Сообщения:".htmlspecialchars($msg);
 
     $headers = "From mysite.ru <site-eamil@mysite.ru> \r\nContent-type: text/html; charset=utf-8 \r\n";
     mail($to,$subject,$message,$headers);
