@@ -17,7 +17,7 @@
 
     $headers = "From mysite.ru <site-eamil@mysite.ru> \r\nContent-type: text/html; charset=utf-8 \r\n";
     mail($to,$subject,$message,$headers);
-    header('location: ../index.html');
+    header('location: index.html');
     exit();
 
 
